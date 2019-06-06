@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adminmaster`
+-- Table structure for table `developermaster`
 --
 
 CREATE TABLE `developermaster` (
