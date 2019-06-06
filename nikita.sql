@@ -1,11 +1,9 @@
- Server: localhost  -   Database: nikita
- 
 -- phpMyAdmin SQL Dump
 -- version 3.2.0.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 31, 2019 at 06:47 AM
+-- Generation Time: Jun 06, 2019 at 11:06 AM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -14,29 +12,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `nikita`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `adminmaster`
---
-
-CREATE TABLE IF NOT EXISTS `adminmaster` (
-  `adminid` int(4) NOT NULL,
-  `adminname` varchar(200) NOT NULL,
-  `admincontact` varchar(10) NOT NULL,
-  `adminpassword` varchar(100) NOT NULL,
-  `mgsparkid` int(3) NOT NULL,
-  `adminemail` varchar(50) NOT NULL,
-  `adminresumename` varchar(50) NOT NULL,
-  `admintasks` varchar(400) DEFAULT NULL,
-  PRIMARY KEY (`adminid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `adminmaster`
---
-
 
 -- --------------------------------------------------------
 
@@ -81,6 +56,29 @@ CREATE TABLE IF NOT EXISTS `deliverymaster` (
 
 --
 -- Dumping data for table `deliverymaster`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `developermaster`
+--
+
+CREATE TABLE IF NOT EXISTS `developermaster` (
+  `developerid` int(4) NOT NULL,
+  `developername` varchar(200) NOT NULL,
+  `developercontact` varchar(10) NOT NULL,
+  `developerpassword` varchar(100) NOT NULL,
+  `mgsparkid` int(3) NOT NULL,
+  `developermail` varchar(50) NOT NULL,
+  `developerresume` varchar(50) NOT NULL,
+  `developertasks` varchar(400) DEFAULT NULL,
+  PRIMARY KEY (`developerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `developermaster`
 --
 
 
@@ -326,16 +324,16 @@ CREATE TABLE IF NOT EXISTS `usermaster` (
 --
 
 --
--- Constraints for table `adminmaster`
---
-ALTER TABLE `adminmaster`
-  ADD CONSTRAINT `adminmaster_ibfk_1` FOREIGN KEY (`adminid`) REFERENCES `adminmaster` (`adminid`);
-
---
 -- Constraints for table `cartmaster`
 --
 ALTER TABLE `cartmaster`
   ADD CONSTRAINT `cartmaster_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `usermaster` (`userid`);
+
+--
+-- Constraints for table `developermaster`
+--
+ALTER TABLE `developermaster`
+  ADD CONSTRAINT `developermaster_ibfk_1` FOREIGN KEY (`developerid`) REFERENCES `developermaster` (`developerid`);
 
 --
 -- Constraints for table `feedbackmaster`
@@ -380,4 +378,3 @@ ALTER TABLE `shopmaster`
 ALTER TABLE `usermaster`
   ADD CONSTRAINT `usermaster_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `usermaster` (`userid`),
   ADD CONSTRAINT `usermaster_ibfk_2` FOREIGN KEY (`Cartid`) REFERENCES `cartmaster` (`cartid`);
-
