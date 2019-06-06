@@ -28,15 +28,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `adminmaster`
 --
 
-CREATE TABLE `adminmaster` (
-  `adminid` int(4) NOT NULL,
-  `adminname` varchar(200) NOT NULL,
-  `admincontact` varchar(10) NOT NULL,
-  `adminpwd` varchar(100) NOT NULL,
+CREATE TABLE `developermaster` (
+  `developerid` int(4) NOT NULL,
+  `developername` varchar(200) NOT NULL,
+  `developercontact` varchar(10) NOT NULL,
+  `developerpwd` varchar(100) NOT NULL,
   `mgsparkid` int(3) NOT NULL,
-  `adminemail` varchar(50) NOT NULL,
-  `adminresumename` varchar(50) NOT NULL,
-  `admintasks` varchar(400) DEFAULT NULL
+  `developeremail` varchar(50) NOT NULL,
+  `developerresumename` varchar(50) NOT NULL,
+  `developertasks` varchar(400) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
